@@ -1,42 +1,10 @@
-import React, { FC } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 import { HashRouter, Routes, Route, Link } from 'react-router-dom'
+import TestPage from './components/TestPage/TestPage';
 
-const Page1: FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Page1</p>
-      </header>
-    </div>
-  )
-}
 
-const Page2: FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Page2</p>
-      </header>
-    </div>
-  )
-}
 
-const Home: FC = () => {
-  return(
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Deploy test</p>
-      </header>
-    </div>
-  )
-}
-
-function App() {
+const App: React.FC = () => {
   return (
     <HashRouter>
       <header className="items-center justify-between flex bg-gray-800 bg-opacity-90 px-12 py-4 my-4 mx-auto shadow-2xl w-11/12">
@@ -51,13 +19,14 @@ function App() {
           </ul>
         </div>
       </header>
-
-      <Routes>
-        <Route path='/page1' element={<Page1 />} />
-        <Route path='/page2' element={<Page2 />} />
-        <Route path='/' element={<Home />} />
-        <Route element={<Home />} />
-      </Routes>
+      <div className="container mx-auto">
+        <Routes>
+          <Route path='/page1' element={<TestPage message="Page 1" />} />
+          <Route path='/page2' element={<TestPage message="Page 2" />} />
+          <Route path='/' element={<TestPage message='Deploy test' />} />
+          <Route element={<TestPage message="Deploy test" />} />
+        </Routes>
+      </div>
     </HashRouter>
   );
 }
