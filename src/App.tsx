@@ -1,5 +1,6 @@
 import React from 'react';
 import { HashRouter, Routes, Route, Link } from 'react-router-dom'
+import MyGoogleMapReact from './components/MyGoogleMapReact/MyGoogleMapsReact';
 import TestPage from './components/TestPage/TestPage';
 
 
@@ -23,9 +24,10 @@ const App: React.FC = () => {
         <Routes>
           <Route path='/page1' element={<TestPage message="Page 1" />} />
           <Route path='/page2' element={<TestPage message="Page 2" />} />
-          <Route path='/' element={<TestPage message='Deploy test' />} />
-          <Route element={<TestPage message="Deploy test" />} />
+          <Route path='/' element={<MyGoogleMapReact />} />
+          <Route element={<MyGoogleMapReact />} />
         </Routes>
+
       </div>
     </HashRouter>
   );
