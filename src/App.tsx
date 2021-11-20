@@ -1,6 +1,7 @@
 import React from 'react';
 import { HashRouter, Routes, Route, Link } from 'react-router-dom'
 import MyGoogleMapReact from './components/MyGoogleMapReact/MyGoogleMapsReact';
+import LocalStorageSample from './components/LocalStorageSample/LocalStorageSample';
 import TestPage from './components/TestPage/TestPage';
 
 
@@ -14,16 +15,16 @@ const App: React.FC = () => {
         </div>
         <div>
           <ul className="flex text-white">
-            <li className="ml-5 px-2 py-1"><Link to='/'>Home</Link></li>
+            <li className="ml-5 px-2 py-1"><Link to='/'>Map</Link></li>
+            <li className="ml-5 px-2 py-1"><Link to='/localstrage'>LocalStrage</Link></li>
             <li className="ml-5 px-2 py-1"><Link to='/page1'>Page1</Link></li>
-            <li className="ml-5 px-2 py-1"><Link to='/page2'>Page2</Link></li>
           </ul>
         </div>
       </header>
       <div className="container mx-auto">
         <Routes>
+          <Route path='/localstrage' element={<LocalStorageSample />} />
           <Route path='/page1' element={<TestPage message="Page 1" />} />
-          <Route path='/page2' element={<TestPage message="Page 2" />} />
           <Route path='/' element={<MyGoogleMapReact />} />
           <Route element={<MyGoogleMapReact />} />
         </Routes>

@@ -21,7 +21,7 @@
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
-  "homepage": "https://itoi10.github.io/react-sample/",
+  "homepage": "https://itoi10.github.io/my-react-sample/",
   "scripts": {
     "start": "craco start",
     "build": "craco build",
