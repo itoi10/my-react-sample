@@ -16,13 +16,13 @@ const MyGoogleMapReact = () => {
   };
 
   // 検索
-  const [mapObj, setMapObj] = useState(null);
-  const [marker, setMarker] = useState(null);
+  const [mapObj, setMapObj] = useState<any>(null);
+  const [marker, setMarker] = useState<any>(null);
   const [address, setAddress] = useState("");
   const search = () => {
     const { map, maps, geocoder } = mapObj;
     // 入力されたワードで検索
-    geocoder.geocode({ address }, (results, status) => {
+    geocoder.geocode({ address }, (results:any, status:any) => {
       // ヒットしたら
       if (status === maps.GeocoderStatus.OK) {
         // フォーカス
@@ -42,7 +42,7 @@ const MyGoogleMapReact = () => {
     });
   };
 
-  const handleApiLoaded = ({ map, maps }) => {
+  const handleApiLoaded = ({ map, maps }:any) => {
     // 検索に使用
     const geocoder = new maps.Geocoder();
     setMapObj({ map, maps, geocoder });
@@ -77,7 +77,7 @@ const MyGoogleMapReact = () => {
       {/* GoogleMapsエリア */}
       <div style={{ height: "80vh", width: "100%" }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
+          bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY || '' }}
           defaultCenter={locTokyoSta}
           defaultZoom={15}
           onGoogleApiLoaded={handleApiLoaded}

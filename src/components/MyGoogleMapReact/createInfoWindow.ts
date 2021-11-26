@@ -1,5 +1,5 @@
 
-export const createInfoWindow = (map, maps, marker, info) => {
+export const createInfoWindow = (map:any, maps:any, marker:any, info:{title:string, content:string}) => {
   const content = `
     <div id="content>
       <div id="siteNotice">
